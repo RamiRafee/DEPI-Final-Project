@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <br><br>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <h3>NPR</h3>
+            <div class="input-group">
+                <input type="file" class="form-control" name="image_name_NPR" required>
+                <input type="submit" value="Upload" class="btn btn-outline-secondary">
+            </div>
+        </form>
+        <br><br>
+        
+    </div>
+
+    {% if NPR %}
+        <div class="container">
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <img class="rounded float-left img-fluid" src="/static/inference_results/{{ upload_image }}" alt="">
+                    </td>
+                    <td>
+                        <img class="rounded float-right img-fluid" src="/static/inference_results/annotated_{{ upload_image }}" alt="">
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+
+
+        </div>
+    
+        
+    
+    {% endif %}
+    
+{% endblock  %}

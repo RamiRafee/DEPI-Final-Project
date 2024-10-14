@@ -13,7 +13,9 @@ INPUT_HEIGHT = 640
 def preprocess_image(image_path):
     """Load and resize image for YOLOv5 model."""
     img = cv2.imread(image_path)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # Resize the image to the input size of the YOLO model (640x640)
+    # img = cv2.resize(img, (INPUT_WIDTH, INPUT_HEIGHT))
+    
     return img
 
 def get_detections(img, net):
